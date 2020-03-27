@@ -13,3 +13,7 @@ content-type: application/json
 }
 ###
 http://localhost:3001/info
+###
+https://glacial-coast-95448.herokuapp.com/api/persons
+###
+https://glacial-coast-95448.herokuapp.com/info
