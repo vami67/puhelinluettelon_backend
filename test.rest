@@ -1,15 +1,15 @@
 http://localhost:3001/api/persons
 ###
-DELETE http://localhost:3001/api/persons/5e8317bbe190bc2a1777ecbd
+DELETE http://localhost:3001/api/persons/5e8333e86d33cf393be57182
 ###
-http://localhost:3001/api/persons/5e8317bbe190bc2a1777ecbd
+http://localhost:3001/api/persons/5e8333e16d33cf393be57181
 ###
 POST http://localhost:3001/api/persons HTTP/1.1
 content-type: application/json
 
 {
-    "name": "weweq",
-    "number": "31231312"
+    "name": "",
+    "number": ""
 }
 ###
 http://localhost:3001/info
@@ -17,3 +17,11 @@ http://localhost:3001/info
 https://glacial-coast-95448.herokuapp.com/api/persons
 ###
 https://glacial-coast-95448.herokuapp.com/info
+###
+PUT http://localhost:3001/api/persons/5e8333e16d33cf393be57181 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "dsad",
+    "number": "fsddfdsfsfsds423423423"
+}
