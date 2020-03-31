@@ -29,26 +29,24 @@ app.get('/api/persons/:id', (request, response) => {
 
 app.post('/api/persons', (request, response) => {
     const body = request.body
-  
-    if (body.name === undefined || body.number === undefined) {
-      return response.status(400).json({ error: 'name or number missing' })
-    }
-  
-    const person = new Person({
-      name: body.name,
-      number: body.number
-    })
-  
-    person.save().then(savedPerson => {
-      response.json(savedPerson.toJSON())
-    })
-  })
 
-const generateId = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+    if (body.name === undefined || body.name === "") {
+        return response.status(400).json({ error: 'name missing' })
+    }
+
+    if (body.number === undefined || body.number === "") {
+        return response.status(400).json({ error: 'number missing' })
+    }
+
+    const person = new Person({
+        name: body.name,
+        number: body.number
+    })
+
+    person.save().then(savedPerson => {
+        response.json(savedPerson.toJSON())
+    })
+})
 
 
 const PORT = process.env.PORT
